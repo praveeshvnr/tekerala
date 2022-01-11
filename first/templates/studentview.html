@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+</head>
+<body>
+    <style>
+        .skills{
+  width: 100%;
+  max-width: 600px;
+  padding: 0 20px;
+  margin: 50px 40px;
+}
+
+.skill-name{
+  font-size: 18px;
+  font-weight: 700;
+  color: #000000;
+  text-transform: uppercase;
+  margin: 20px 0;
+}
+
+.skill-bar{
+  height: 14px;
+  background: #282828;
+  border-radius: 3px;
+}
+
+.skill-per{
+  height: 14px;
+  background: #d13639;
+  border-radius: 3px;
+  position: relative;
+  animation: fillBars 2.5s infinite;
+}
+
+.skill-per::before{
+  content: attr(per);
+  position: absolute;
+  padding: 4px 6px;
+  background: #f1f1f1;
+  border-radius: 4px;
+  font-size: 12px;
+  top: -35px;
+  right: 0;
+  transform: translateX(50%);
+}
+
+.skill-per::after{
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #f1f1f1;
+  top: -20px;
+  right: 0;
+  transform: translateX(50%) rotate(45deg);
+  border-radius: 2px;
+}
+
+@keyframes fillBars{
+  from{
+    width: 0;
+  }
+  to{
+    width: 100%;
+  }
+}
+
+    </style>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
+        <div class="container">
+            
+            <a href="#" class="navbar-brand" >
+                <h3 class="text-success" style="font-size: 30px;"><img src="{% static 'images/iptlogo.png'%}" alt="Los Angeles" width="100px" height="40px"> IPT &<span class="text-primary">GPTC</span></h3>
+            </a>
+         
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+
+
+          <div class="collapse navbar-collapse" id="menu">
+              <ul class="navbar-nav mx-auto" style="font-size: 15px;" >
+                 <!-- <li class="nav-item">
+                      <a href="/index/" class="nav-link">Home</a>
+                  </li>-->
+                 
+                  <li class="nav-item">
+                      <a href="/index/" class="nav-link " >Home</a>
+                  </li>
+                 <li class="nav-item ">
+                      <a href="/student/" class="nav-link active" >Student login</a>
+                  </li>
+                 <!-- <li class="nav-item">
+                    <a href="/admins/" class="nav-link">Admin</a>
+                </li>-->
+              </ul>
+              <!--<button class="btn btn-primary me-2">Sign up</button>
+              <button class="btn btn-outline-primary me-2" style="margin-left: 3px;">Login</button>-->
+              </div>
+        </div>
+    </nav>
+    <html>
+    <body>
+      <div class="skills" >
+        <div class="skill">
+          <div class="skill-name">Total</div>
+          <div class="skill-bar">
+            <div class="skill-per" per="90%" style="max-width:90%"></div>
+          </div>
+        </div>
+      
+        <div class="skill">
+          <div class="skill-name">Boys</div>
+          <div class="skill-bar">
+            <div class="skill-per" per="70%" style="max-width:70%"></div>
+          </div>
+        </div>
+      
+        <div class="skill">
+          <div class="skill-name">Girls</div>
+          <div class="skill-bar">
+            <div class="skill-per" per="60%" style="max-width:60%"></div>
+          </div>
+        </div>
+      
+      
+      </div>
+        <div class="container">
+            <h2>Hoverable Dark Table</h2>
+            <p>The .table-hover class adds a hover effect (grey background color) on table rows:</p>            
+            <table class="table table-dark table-hover" border="2">
+              <thead>
+                <tr><th>id</th>
+                    <th>name</th>
+                    
+                    <th>chemistry</th>
+                    <th>physics</th>
+                    <th>maths</th>
+                    <th>english</th>
+                    <th>email</th>
+                    </tr>
+              </thead>
+              <tbody>
+                {% for i in vars%}
+                    <tr><td>{{i.id}}</td>
+                        <td>{{i.name}}</td>
+                        <td>{{i.chemistry}}</td>
+                        <td>{{i.physics}}</td>
+                        <td>{{i.maths}}</td>
+                        <td>{{i.english}}</td>
+                        <td>{{i.email}}</td>
+                        
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+          
+
+    </body>
+</html>
+    
+    

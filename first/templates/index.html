@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'style.css'%}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+</head>
+<body>
+    <style>
+        
+
+    </style>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
+        <div class="container">
+            
+            <a href="#" class="navbar-brand" >
+                <h3 class="text-success" style="font-size: 30px;"><img src="{% static 'images/iptlogo.png'%}" alt="Los Angeles" width="100px" height="40px"> IPT &<span class="text-primary">GPTC</span></h3>
+            </a>
+         
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+
+
+          <div class="collapse navbar-collapse" id="menu">
+              <ul class="navbar-nav mx-auto" style="font-size: 15px;" >
+                 <!-- <li class="nav-item">
+                      <a href="/index/" class="nav-link">Home</a>
+                  </li>-->
+                 
+                  <li class="nav-item">
+                      <a href="#" class="nav-link active" >Home</a>
+                  </li>
+                 <li class="nav-item ">
+                      <a href="/student/" class="nav-link " >Student login</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="/admins/" class="nav-link">Admin</a>
+                </li>
+              </ul>
+              <!--<button class="btn btn-primary me-2">Sign up</button>
+              <button class="btn btn-outline-primary me-2" style="margin-left: 3px;">Login</button>-->
+              </div>
+        </div>
+    </nav>
+    <div id="demo" class="carousel slide" data-ride="carousel">
+
+        <!-- Indicators -->
+        <ul class="carousel-indicators">
+          <li data-target="#demo" data-slide-to="0" class="active"></li>
+          <li data-target="#demo" data-slide-to="1"></li>
+          <li data-target="#demo" data-slide-to="2"></li>
+        </ul>
+        
+        <!-- The slideshow -->
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="{% static '/images/IMG-20180921-WA0017.jpg' %}" style="width: 100%;  height: 100vh;">
+            <div class="carousel-caption">
+              <h1 style="color: rgb(252, 0, 0); size: 50px;"><b>IPT & GPTC SHORANUR</b></h1>
+              <p style="color: rgb(248, 248, 248);"><b>Nestled Within A Luscious Green Forest Cover Stretching Over Kilometres, Institute Of Printing Technology And Government Polytechnic College Was Established In 1967 By The Govt. Of Kerala Under The Department Of Technical Education And Is Approved By AICTE (Permanent ID: 1-474656361) And Affiliated To SBTE (Affiliation No.: SBTE101901). What Started As An Institute Of Printing Technology, Developed And Evolved To Be One Of The Major Centres Of Excellence In Technical Education With The Incorporation Of The Department Of Electronics Engineering In 1987 And The Department Of Computer Engineering In 1989. It Has The Privilege Of Being The Only Institute In The Entire State Which Offers A Three-Year Diploma Programme In Printing Technology.</b></p>
+            </div>   
+          </div>
+          <div class="carousel-item">
+            <img src="{% static '/images/IMG20210923121226.jpg' %}" alt="illla" style="width: 110%; height : 100vh;">
+          </div>
+          <div class="carousel-item">
+            <img src="{% static '/images/IMG-20180925-WA0016.jpg' %}" alt="sorry" style="width: 100%; height : 100vh;">   
+          </div>
+        </div>
+        <!-- Left and right controls -->
+        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#demo" data-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </a>
+      </div>
+      <section class="gallery" id="gallery">
+
+        <h1 class="heading">
+            <span>g</span>
+            <span>a</span>
+            <span>l</span>
+            <span>l</span>
+            <span>e</span>
+            <span>r</span>
+            <span>y</span>
+        </h1>
+    
+        <div class="box-container">
+    
+            <div class="box">
+                <img src="{% static '/images/GOPR1750.jpg' %}" alt="">
+                <div class="content">
+                    <h3>amazing places</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, tenetur.</p>
+                    <a href="#" class="btn">see more</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="{% static '/images/Campus.jpg' %}" alt="">
+                <div class="content">
+                    <h3>amazing places</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, tenetur.</p>
+                    <a href="#" class="btn">see more</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="{% static '/images/IMG20211007131216.jpg' %}" alt="">
+                <div class="content">
+                    <h3>amazing places</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, tenetur.</p>
+                    <a href="#" class="btn">see more</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="{% static '/images/IMG20211012141840.jpg' %}" alt="">
+                <div class="content">
+                    <h3>amazing places</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, tenetur.</p>
+                    <a href="#" class="btn">see more</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="{% static '/images/IMG_20180813_140126.jpg' %}" alt="">
+                <div class="content">
+                    <h3>amazing places</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, tenetur.</p>
+                    <a href="#" class="btn">see more</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="{% static '/images/IMG-20180921-WA0017.jpg' %}" alt="">
+                <div class="content">
+                    <h3>amazing places</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, tenetur.</p>
+                    <a href="#" class="btn">see more</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="{% static '/images/IMG-20180922-WA0041.jpg' %}" alt="">
+                <div class="content">
+                    <h3>amazing places</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, tenetur.</p>
+                    <a href="#" class="btn">see more</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="{% static '/images/IMG-20180925-WA0016.jpg' %}" alt="">
+                <div class="content">
+                    <h3>amazing places</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, tenetur.</p>
+                    <a href="#" class="btn">see more</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="{% static '/images/IMG20211012141840.jpg' %}" alt="">
+                <div class="content">
+                    <h3>amazing places</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, tenetur.</p>
+                    <a href="#" class="btn">see more</a>
+                </div>
+            </div>
+            
+    
+        </div>
+    
+    </section>
+    <!-- contact section starts  -->
+
+
+<section>
+    <h2>Institute Of Printing Technology</h2>
+    <p>Nestled within a luscious green forest cover stretching over kilometres, Institute of Printing Technology and Government Polytechnic College was established in 1967 by the Govt. of Kerala under the department of Technical Education and is approved by AICTE (Permanent ID: 1-474656361) and affiliated to SBTE (Affiliation No.: SBTE101901).
+        What started as an Institute of Printing Technology, developed and evolved to be one of the major centres of excellence in Technical Education with the incorporation of the Department of Electronics Engineering in 1987 and the Department of Computer Engineering in 1989. It has the privilege of being the only Institute in the entire state which offers a three-year Diploma Programme in Printing Technology.</p>
+</section>
+<section id="about" class="about p-4 mb-5">
+    <div class="container">
+        <div class="row" >
+            <div class="col-lg-6 col-sm-12">
+            <h5 class="tect-secondary"></h5>
+            <h2>Computer engineering</h2>
+            <p class="lead text-info" ><b>Computer engineering (CoE or CpE) is a branch of engineering that integrates several fields of computer
+                science and electronic engineering required to develop computer hardware and software.[1] Computer engin
+                eers usually have training in electronic engineering (or electrical engineering), software design, and ha
+                rdware-software integration instead of only software 
+               engineering or electronic engineering. Computer engineers are involved in many hardware and software aspec
+               ts of computing, from the design of individual microcontrollers, microprocessors, personal computers, and 
+               supercomputers, to circuit design. This field of engineering not only focuses on how computer systems them
+               elves work but also how they integrate into the larger picture.[2]
+       
+               
+              </b> </p>
+              </div>
+              <div class="col-lg-6 col-sm-12">
+                  <img src="{% static '/images/program-electrical-comp-eng.jpg' %}" style="width: 80%; height: 30%; margin-top: 50px;" alt="" class="imgfluid rounded col-lg-10 col-sm-12">
+              </div>
+          </div>
+          <div class="row mt-5 flex-row-reverse">
+              <div class="col-lg-6 col-sm-12">
+              <h5 class="tect-secondary">about</h5>
+              <h2>Electronics Engineering</h2>
+              <p class="lead text-secondary">Diploma in Electronics Engineering is a 3-year full-time diploma level engineering course. Candidates who have completed 10th examination with Mathematics and Science stream or an equivalent examination from a recognized board with 55% marks are eligible for Diploma in Electronics Engineering course. 
+
+                Most of the colleges and universities offer Diploma in Electronics Engineering course. Every college and university has their own eligibility criteria, admission process, fees structure, and syllabus for this course.</p>
+                </div>
+                <div class="col-lg-6 col-sm-12" >
+                    <img src="{% static '/images/maxresdefault (1).jpg' %}" alt="" class="imgfluid rounded col-lg-6 col-sm-12">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-sm-12">
+                <h5 class="tect-secondary"></h5>
+                <h2>Printing Technology</h2>
+                <p class="lead text-info"><b>B.Tech. Printing Technology or Bachelor of Technology in Printing Technology is an undergraduate Printing Technology course. Printing is a process for reproducing text and image, typically with ink on paper using a printing press. It is often carried out as a large-scale industrial process, and is an essential part of publishing and transaction printing. The course is solely dedicated towards the management of the jobs concerned with printing in a printing press.
+
+ 
+
+                    Almost every procedures of assembling the films for the operating printing equipments and the well finished jobs of cutting the finished works; are enlightened to the students. Hence, altogether the course promises an individual, the quality and experiences that would further assist him to various job profiles. The duration of the course is four years but it may be offered by some certain institutes in more or less times depending on their rules and regulations. Candidates have many career options after having completed the course.
+                  </b> </p>
+                  </div>
+                  <div class="col-lg-6 col-sm-12" style="margin-top: 40px;">
+                      <img src="{% static '/images/maxresdefault (2).jpg' %}"  alt="" class="imgfluid rounded col-lg-10 col-sm-12">
+                  </div>
+              </div>
+        
+    </div>
+</section>
+<section class="contact" id="contact">
+    
+    <h1 class="heading">
+        <span>c</span>
+        <span>o</span>
+        <span>n</span>
+        <span>t</span>
+        <span>a</span>
+        <span>c</span>
+        <span>t</span>
+    </h1>
+
+    <div class="row">
+
+        <div class="image">
+            <img src="{% static '/images/Campus.jpg' %}" style="height: 40%; width: 50%;" alt="">
+        </div>
+
+        <form action="/message/">
+            <div class="inputBox">
+                <input type="text" placeholder="name" name="cname">
+                <input type="email" placeholder="email" name="cemail">
+            </div>
+            <div class="inputBox">
+                <input type="number" placeholder="number" name="cnumber">
+                <input type="text" placeholder="subject" name="csub">
+            </div>
+            <textarea placeholder="message" name="cmessage" id="" cols="30" rows="10"></textarea>
+            <input type="submit" class="btn" value="send message">
+        </form>
+
+    </div>
+    
+</section>
+
+<!-- contact section ends -->
+<!-- review section starts  -->
+
+
+    
+<!-- footer section  -->
+
+<section class="footer">
+
+    <div class="box-container">
+
+        <div class="box">
+            <h3>about us</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda quas magni pariatur est accusantium voluptas enim nemo facilis sit debitis.</p>
+        </div>
+        <div class="box">
+            <h3>Cources</h3>
+            <a href="#">Computer Engineering</a>
+            <a href="#">Electronics Engineering</a>
+            <a href="#">Printing technology</a>
+            <a href="#">Electrical Engineering</a>
+        </div>
+        <div class="box">
+            <h3>quick links</h3>
+            <a href="#">home</a>
+            <a href="#">book</a>
+            <a href="#">packages</a>
+            <a href="#">services</a>
+            <a href="#">gallery</a>
+            <a href="#">review</a>
+            <a href="#">contact</a>
+        </div>
+        <div class="box">
+            <h3>follow us</h3>
+            <a href="#">facebook</a>
+            <a href="#">instagram</a>
+            <a href="#">twitter</a>
+            <a href="#">linkedin</a>
+        </div>
+
+    </div>
+
+    <h1 class="credit"> created by <span> mr. web designer </span> | all rights reserved! </h1>
+
+</section>
+
+
+</body>
+</html>

@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'style.css'%}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+</head>
+<body>
+    <style>
+        .bb-login {
+          margin-top: 100px;
+          margin-bottom: 300px
+      }
+     
+      input {
+          outline: none;
+          border: none
+      }
+     
+      textarea {
+          outline: none;
+          border: none
+      }
+     
+      textarea:focus,
+      input:focus {
+          border-color: transparent !important
+      }
+     
+      input:focus::-webkit-input-placeholder {
+          color: transparent
+      }
+     
+      input:focus:-moz-placeholder {
+          color: transparent
+      }
+     
+      input:focus::-moz-placeholder {
+          color: transparent
+      }
+     
+      input:focus:-ms-input-placeholder {
+          color: transparent
+      }
+     
+      textarea:focus::-webkit-input-placeholder {
+          color: transparent
+      }
+     
+      textarea:focus:-moz-placeholder {
+          color: transparent
+      }
+     
+      textarea:focus::-moz-placeholder {
+          color: transparent
+      }
+     
+      textarea:focus:-ms-input-placeholder {
+          color: transparent
+      }
+     
+      input::-webkit-input-placeholder {
+          color: #adadad
+      }
+     
+      input:-moz-placeholder {
+          color: #adadad
+      }
+     
+      input::-moz-placeholder {
+          color: #adadad
+      }
+     
+      input:-ms-input-placeholder {
+          color: #adadad
+      }
+     
+      textarea::-webkit-input-placeholder {
+          color: #adadad
+      }
+     
+      textarea:-moz-placeholder {
+          color: #adadad
+      }
+     
+      textarea::-moz-placeholder {
+          color: #adadad
+      }
+     
+      textarea:-ms-input-placeholder {
+          color: #adadad
+      }
+     
+      button {
+          outline: none !important;
+          border: none;
+          background: transparent
+      }
+     
+      button:hover {
+          cursor: pointer
+      }
+     
+      iframe {
+          border: none !important
+      }
+     
+      .txt1 {
+          font-family: Poppins-Regular;
+          font-size: 13px;
+          color: #666666;
+          line-height: 1.5
+      }
+     
+      .txt2 {
+          font-family: Poppins-Regular;
+          font-size: 18px;
+          color: #333333;
+          line-height: 1.5
+      }
+     
+      .p-t-115 {
+          padding-top: 40px
+      }
+     
+      .p-b-48 {
+          padding-bottom: 35px
+      }
+     
+      .limit {
+          width: 100%;
+          margin: 0 auto
+      }
+     
+      .login-container {
+          width: 100%;
+          min-height: 100vh;
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -moz-box;
+          display: -ms-flexbox;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          align-items: center;
+          padding: 15px;
+          background: #f2f2f2
+      }
+     
+      .bb-login {
+          width: 390px;
+          background: #fff;
+          border-radius: 0px;
+          overflow: hidden;
+          padding: 26px 23px 35px 21px;
+          box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+          -moz-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+          -webkit-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+          -o-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+          -ms-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1)
+      }
+     
+      .bb-form {
+          width: 100%
+      }
+     
+      .bb-form-title {
+          display: block;
+          font-family: Poppins-Bold;
+          font-size: 30px;
+          color: #333333;
+          line-height: 1.2;
+          text-align: center
+      }
+     
+      .bb-form-title i {
+          font-size: 60px
+      }
+     
+      .wrap-input100 {
+          width: 100%;
+          position: relative;
+          border-bottom: 2px solid #adadad;
+          margin-bottom: 37px
+          
+      }
+     
+      .input100 {
+          font-family: Poppins-Regular;
+          font-size: 15px;
+          color: #555555;
+          line-height: 1.2;
+          display: block;
+          width: 100%;
+          height: 45px;
+          background: transparent;
+          padding: 0 5px
+      }
+     
+      .bbb-input {
+          position: absolute;
+          display: block;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          pointer-events: none
+      }
+     
+      .bbb-input::before {
+          content: "";
+          display: block;
+          position: absolute;
+          bottom: -2px;
+          left: 0;
+          width: 0;
+          height: 2px;
+          -webkit-transition: all 0.4s;
+          -o-transition: all 0.4s;
+          -moz-transition: all 0.4s;
+          transition: all 0.4s;
+          background: #6a7dfe;
+          background: -webkit-linear-gradient(left, #21d4fd, #b721ff);
+          background: -o-linear-gradient(left, #21d4fd, #b721ff);
+          background: -moz-linear-gradient(left, #21d4fd, #b721ff);
+          background: linear-gradient(left, #21d4fd, #b721ff)
+      }
+     
+      .bbb-input::after {
+          font-family: Poppins-Regular;
+          font-size: 15px;
+          color: #999999;
+          line-height: 1.2;
+          content: attr(data-placeholder);
+          display: block;
+          width: 100%;
+          position: absolute;
+          top: 16px;
+          left: 0px;
+          padding-left: 5px;
+          -webkit-transition: all 0.4s;
+          -o-transition: all 0.4s;
+          -moz-transition: all 0.4s;
+          transition: all 0.4s
+      }
+     
+      .input100:focus+.bbb-input::after {
+          top: -15px
+      }
+     
+      .input100:focus+.bbb-input::before {
+          width: 100%
+      }
+     
+      .has-val.input100+.bbb-input::after {
+          top: -15px
+      }
+     
+      .has-val.input100+.bbb-input::before {
+          width: 100%
+      }
+     
+      .btn-show-pass {
+          font-size: 15px;
+          color: #999999;
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -moz-box;
+          display: -ms-flexbox;
+          display: flex;
+          align-items: center;
+          position: absolute;
+          height: 100%;
+          top: 0;
+          right: 0;
+          padding-right: 5px;
+          cursor: pointer;
+          -webkit-transition: all 0.4s;
+          -o-transition: all 0.4s;
+          -moz-transition: all 0.4s;
+          transition: all 0.4s
+      }
+     
+      .btn-show-pass:hover {
+          color: #6a7dfe;
+          color: -webkit-linear-gradient(left, #21d4fd, #b721ff);
+          color: -o-linear-gradient(left, #21d4fd, #b721ff);
+          color: -moz-linear-gradient(left, #21d4fd, #b721ff);
+          color: linear-gradient(left, #21d4fd, #b721ff)
+      }
+     
+      .btn-show-pass.active {
+          color: #6a7dfe;
+          color: -webkit-linear-gradient(left, #21d4fd, #b721ff);
+          color: -o-linear-gradient(left, #21d4fd, #b721ff);
+          color: -moz-linear-gradient(left, #21d4fd, #b721ff);
+          color: linear-gradient(left, #21d4fd, #b721ff)
+      }
+     
+      .login-container-form-btn {
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -moz-box;
+          display: -ms-flexbox;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          padding-top: 13px
+      }
+     
+      .bb-login-form-btn {
+          width: 100%;
+          display: block;
+          position: relative;
+          z-index: 1;
+          border-radius: 25px;
+          overflow: hidden;
+          margin: 0 auto
+      }
+     
+      .bb-form-bgbtn {
+          position: absolute;
+          z-index: -1;
+          width: 300%;
+          height: 100%;
+          background: #a64bf4;
+          background: -webkit-linear-gradient(right, #aaa, #aaa, #0a5e1f, #0a5e1f);
+          background: -o-linear-gradient(right, #21d4fd, #b721ff, #21d4fd, #b721ff);
+          background: -moz-linear-gradient(right, #21d4fd, #b721ff, #21d4fd, #b721ff);
+          background: linear-gradient(right, #21d4fd, #b721ff, #21d4fd, #b721ff);
+          top: 0;
+          left: -100%;
+          -webkit-transition: all 0.4s;
+          -o-transition: all 0.4s;
+          -moz-transition: all 0.4s;
+          transition: all 0.4s
+      }
+     
+      .bb-form-btn {
+          font-family: Poppins-Medium;
+          font-size: 15px;
+          color: #222;
+          line-height: 1.2;
+          text-transform: uppercase;
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -moz-box;
+          display: -ms-flexbox;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 0 20px;
+          width: 100%;
+          height: 50px
+      }
+     
+      .bb-login-form-btn:hover .bb-form-bgbtn {
+          left: 0
+      }
+     
+      @media (max-width: 576px) {
+          .bb-login {
+              padding: 77px 15px 33px 15px
+          }
+      }
+     
+      .validate-input {
+          position: relative
+      }
+     
+      .alert-validate::before {
+          content: attr(data-validate);
+          position: absolute;
+          max-width: 70%;
+          background-color: #fff;
+          border: 1px solid #c80000;
+          border-radius: 2px;
+          padding: 4px 25px 4px 10px;
+          top: 50%;
+          -webkit-transform: translateY(-50%);
+          -moz-transform: translateY(-50%);
+          -ms-transform: translateY(-50%);
+          -o-transform: translateY(-50%);
+          transform: translateY(-50%);
+          right: 0px;
+          pointer-events: none;
+          font-family: Poppins-Regular;
+          color: #c80000;
+          font-size: 13px;
+          line-height: 1.4;
+          text-align: left;
+          visibility: hidden;
+          opacity: 0;
+          -webkit-transition: opacity 0.4s;
+          -o-transition: opacity 0.4s;
+          -moz-transition: opacity 0.4s;
+          transition: opacity 0.4s
+      }
+     
+      .alert-validate::after {
+          content: "\f06a";
+          font-family: FontAwesome;
+          font-size: 16px;
+          color: #c80000;
+          display: block;
+          position: absolute;
+          background-color: #fff;
+          top: 50%;
+          -webkit-transform: translateY(-50%);
+          -moz-transform: translateY(-50%);
+          -ms-transform: translateY(-50%);
+          -o-transform: translateY(-50%);
+          transform: translateY(-50%);
+          right: 5px
+      }
+     
+      .alert-validate:hover:before {
+          visibility: visible;
+          opacity: 1
+      }
+     
+      @media (max-width: 992px) {
+          .alert-validate::before {
+              visibility: visible;
+              opacity: 1
+          }
+      }
+     
+      a {
+          text-decoration: none !important
+      }
+     
+      .mdi {
+          color: #f2f2f2 !important
+      }
+     
+      .show_password {
+          color: black !important;
+          margin-right: 8px
+      }
+      
+         </style>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
+        <div class="container">
+            
+            <a href="#" class="navbar-brand" >
+                <h3 class="text-success" style="font-size: 30px;"><img src="{% static 'images/iptlogo.png'%}" alt="Los Angeles" width="100px" height="40px"> IPT &<span class="text-primary">GPTC</span></h3>
+            </a>
+         
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+
+
+          <div class="collapse navbar-collapse" id="menu">
+              <ul class="navbar-nav mx-auto" style="font-size: 15px;" >
+                 <!-- <li class="nav-item">
+                      <a href="/index/" class="nav-link">Home</a>
+                  </li>-->
+                 
+                  <li class="nav-item">
+                      <a href="/index/" class="nav-link " >Home</a>
+                  </li>
+                 <li class="nav-item ">
+                      <a href="#" class="nav-link active" >Admin page</a>
+                  </li>
+                  
+                <li class="nav-item">
+                    <a href="/settings/" class="nav-link">Settings</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#t" class="nav-link">Table</a>
+                </li>
+              </ul>
+              <!--<button class="btn btn-primary me-2">Sign up</button>
+              <button class="btn btn-outline-primary me-2" style="margin-left: 3px;">Login</button>-->
+              </div>
+        </div>
+    </nav>
+    <div class="limit">
+        <div class="login-container">
+            <div class="bb-login">
+                <form action="/save/" method="post"> 
+                  <div class="bb-form validate-form">
+                  <span class="bb-form-title p-b-26">Add students</span> <span class="bb-form-title p-b-48"> <i class="mdi mdi-symfony"></i> </span></div>
+                  {% csrf_token %} 
+                  <div class="wrap-input100 validate-input" data-validate="Enter username"> <span class="btn-show-pass"> <i class="mdi mdi-eye show_password"></i> </span> <input type="name" name="name" placeholder="Name" required> <span class="bbb-input" ></span> </div>
+                  <div class="wrap-input100 validate-input" data-validate="Enter username"> <span class="btn-show-pass"> <i class="mdi mdi-eye show_password"></i> </span> <input type="password" name="password" placeholder="password" required> <span class="bbb-input" ></span> </div>
+                  <div class="wrap-input100 validate-input" data-validate="Enter username"> <span class="btn-show-pass"> <i class="mdi mdi-eye show_password"></i> </span> <input type="name" name="chemistry" placeholder="Chemistry" required> <span class="bbb-input" ></span> </div>
+                  <div class="wrap-input100 validate-input" data-validate="Enter username"> <span class="btn-show-pass"> <i class="mdi mdi-eye show_password"></i> </span> <input type="name" name="physics" placeholder="Physics" required> <span class="bbb-input" ></span> </div>
+                  <div class="wrap-input100 validate-input" data-validate="Enter username"> <span class="btn-show-pass"> <i class="mdi mdi-eye show_password"></i> </span> <input type="name" name="maths" placeholder="Maths" required> <span class="bbb-input" ></span> </div>
+                  <div class="wrap-input100 validate-input" data-validate="Enter username"> <span class="btn-show-pass"> <i class="mdi mdi-eye show_password"></i> </span> <input type="name" name="english" placeholder="English" required> <span class="bbb-input" ></span> </div>
+                   <div class="wrap-input100 validate-input" data-validate="Valid email is: a@b.c"> <input type="email" name="email" placeholder="email" required> <span class="bbb-input"></span> </div>
+                    
+                    <div class="login-container-form-btn">
+                        <div class="bb-login-form-btn">
+                            <div class="bb-form-bgbtn"></div> <button type="submit" class="bb-form-btn">Upload</button>
+                        </div>
+                    </div>
+                    <div class="text-center p-t-115"> <span class="txt1"> Already have an account? </span> <a class="txt2" href="/login/">login here</a> </div>
+                </form>
+              
+            </div>
+        </div>
+      </div>
+
+      <div class="container" id="t">
+        <h2>Hoverable Dark Table</h2>
+        <p>The .table-hover class adds a hover effect (grey background color) on table rows:</p>            
+        <table class="table table-dark table-hover" border="2">
+          <thead>
+            <tr><th>id</th>
+                <th>name</th>
+                <th>password</th>
+                <th>chemistry</th>
+                <th>physics</th>
+                <th>maths</th>
+                <th>english</th>
+                <th>email</th>
+                <th>delete</th>
+                <th>edit</th></tr>
+          </thead>
+          <tbody>
+            {% for i in vars%}
+<tr><td>{{i.id}}</td>
+<td>{{i.name}}</td>
+<td>{{i.password}}</td>
+<td>{{i.chemistry}}</td>
+<td>{{i.physics}}</td>
+<td>{{i.maths}}</td>
+<td>{{i.english}}</td>
+<td>{{i.email}}</td>
+<td><a href="/delete/{{i.id}}">delete</a>
+    </td>
+    <td><a href="/edit/{{i.id}}">edit</a>
+    </td>
+</tr>
+{% endfor %}
+          </tbody>
+        </table>
+      </div>
+        
+    
+    
+    </body>
+    </html>
