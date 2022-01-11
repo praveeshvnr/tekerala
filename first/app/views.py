@@ -32,6 +32,7 @@ def save(request):
         return render(request, 'adminpage.html',{'vars':vars})
 
 def login(request):
+    
     if request.method=='POST':
         if new.objects.filter(email=request.POST['email1'], password=request.POST['password1']).exists():
             members= new.objects.get(email=request.POST['email1'], password=request.POST['password1'])
@@ -76,4 +77,20 @@ def message(request):
 def delete(request,id):
     vars1=new.objects.get(id=id)
     vars1.delete()
+    return redirect('/adminpage')
+def edit(request,id):
+    vars=new.objects.get(id=id)
+    return render(request,'settings.html',{'var':vars})
+    
+def update(request,id):
+    vars=new.objects.get(id=id)
+    vars.name=request.POST.get('name')
+    vars.password=request.POST.get('password')
+    vars.chemistry=request.POST.get('chemistry')
+    vars.physics=request.POST.get('physics')
+    vars.maths=request.POST.get('maths')
+    vars.english=request.POST.get('english')
+    vars.email=request.POST.get('email')
+    vars.save()
+    
     return redirect('/adminpage')
