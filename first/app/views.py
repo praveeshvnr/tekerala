@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from app.models import new,new1
+from app.models import new,new1,new2
 # Create your views here.
 def index(request):
     return render(request,'index.html')
@@ -56,7 +56,8 @@ def loginadmin(request):
         if new1.objects.filter(username=request.POST['uname'], password1=request.POST['psw']).exists():
             
             vars=new.objects.all()
-            return render(request, 'adminpage.html',{'vars':vars})
+            var=new2.objects.all()
+            return render(request, 'adminpage.html',{'vars':vars,'var':var})
         else:
             return render(request,'admins.html')
 
@@ -71,10 +72,10 @@ def message(request):
         cmessage=request.POST.get("cmessage")
 
 
-        vars=new1(cname=cname,cemail=cemail,cnumber=cnumber,csub=csub,cmessage=cmessage)
+        vars=new2(cname=cname,cemail=cemail,cnumber=cnumber,csub=csub,cmessage=cmessage)
         vars.save()
-        vars=new1.objects.all()
-        return render(request, 'adminpage.html',{'vars':vars})
+        
+        return render(request, 'index.html')
 def delete(request,id):
     vars1=new.objects.get(id=id)
     vars1.delete()

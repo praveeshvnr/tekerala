@@ -270,7 +270,8 @@
             <img src="{% static '/images/122715793 network.jpg' %}" style="height: 40%; " alt="">
         </div>
 
-        <form action="/message/">
+        <form action="/message/" method="post">
+            {% csrf_token %} 
             <div class="inputBox">
                 <input type="text" placeholder="name" name="cname">
                 <input type="email" placeholder="email" name="cemail">

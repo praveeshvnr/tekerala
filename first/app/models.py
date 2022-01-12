@@ -12,3 +12,14 @@ class new(models.Model):
 class new1(models.Model):
     username=models.CharField(max_length=30)
     password1=models.CharField(max_length=30)
+
+class new2(models.Model):
+    cname=models.CharField(max_length=30)
+    cemail=models.CharField(max_length=30)
+    cnumber=models.CharField(max_length=30)
+    csub=models.CharField(max_length=30)
+    cmessage=models.CharField(max_length=30)
+
+
+
+     

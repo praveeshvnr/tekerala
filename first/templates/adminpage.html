@@ -554,6 +554,34 @@
           </tbody>
         </table>
       </div>
+      <div class="container" id="t" style="margin-top: 50px;">
+        <h2>Messages</h2>
+        <p></p>            
+        <table class="table table-dark table-hover" border="2">
+          <thead>
+            <tr><th>id</th>
+                <th>name</th>
+                <th>email</th>
+                <th>number</th>
+                <th>sub</th>
+                <th>message</th>
+                </tr>
+          </thead>
+          <tbody>
+            {% for i in var%}
+<tr><td>{{i.id}}</td>
+<td>{{i.cname}}</td>
+<td>{{i.cemail}}</td>
+<td>{{i.cnumber}}</td>
+<td>{{i.csub}}</td>
+<td>{{i.cmessage}}</td>
+
+    </td>
+</tr>
+{% endfor %}
+          </tbody>
+        </table>
+      </div>
         
     
     
