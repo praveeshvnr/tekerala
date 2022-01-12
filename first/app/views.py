@@ -35,18 +35,19 @@ def login(request):
     
     if request.method=='POST':
         if new.objects.filter(email=request.POST['email1'], password=request.POST['password1']).exists():
-            members= new.objects.get(email=request.POST['email1'], password=request.POST['password1'])
-            vars=new.objects.all()
-            return render(request, 'studentview.html',{'member':members,'vars':vars})
+            members= new.objects.all()
+            
+            return render(request, 'studentview.html',{'member':members})
         else:
             return render(request,'student.html')
 
     else:
          return render(request,'student.html')
+        
 def alog(request):
         username=request.POST.get("username")
-        password=request.POST.get("password")
-        vars=new1(username=username,password=password)
+        password1=request.POST.get("password1")
+        vars=new1(username=username,password1=password1)
         vars.save()
         vars=new1.objects.all()
         return render(request, 'settings.html',{'vars':vars})
@@ -94,3 +95,9 @@ def update(request,id):
     vars.save()
     
     return redirect('/adminpage')
+
+def loginn(request,id):
+    vars=new.objects.filter(id=id)
+    return render(request, 'studentview.html',{'var':vars})
+    
+    
