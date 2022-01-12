@@ -551,7 +551,8 @@
          <h2 class="title" style="color: rgb(0, 0, 0); margin-bottom: 30px;"><center><u>Change username/password</u></center></h2> 
       
         <div class="total">
-        <form action="/alog/" name="form1" target="_self" autocomplete="on"> 
+        <form action="/alog/" name="form1" target="_self" autocomplete="on" method="post"> 
+            {% csrf_token %} 
           <div class="row">
             <labe class="a">User  Name :</labe>
             <input class="b   col-md-8 col-sm-8  col-7" type="text" name="username" placeholder="User Name" > <br>

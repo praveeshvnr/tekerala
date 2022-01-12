@@ -49,8 +49,8 @@ def alog(request):
         password1=request.POST.get("password1")
         vars=new1(username=username,password1=password1)
         vars.save()
-        vars=new1.objects.all()
-        return render(request, 'settings.html',{'vars':vars})
+        
+        return render(request, 'settings.html')
 def loginadmin(request):
     if request.method=='POST':
         if new1.objects.filter(username=request.POST['uname'], password1=request.POST['psw']).exists():
