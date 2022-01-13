@@ -31,8 +31,10 @@ urlpatterns = [
     path('save/',views.save),
     path('message/',views.message),
     path('delete/<int:id>',views.delete),
+    path('deletet/<int:id>',views.deletet),
     path('login/',views.login),
     path('loginn/<int:id>',views.loginn),
     path('edit/<int:id>',views.edit),
+    path('addadmin/',views.addadmin),
     path('update/<int:id>',views.update),
 ]

@@ -8,9 +8,9 @@ def student(request):
 def admins(request):
     return render(request,'admins.html')
 def adminpage(request):
-     
+     var=new2.objects.all()
      vars=new.objects.all()
-     return render(request, 'adminpage.html',{'vars':vars})
+     return render(request, 'adminpage.html',{'vars':vars,'var':var})
      
 def studentview(request):
     return render(request,'studentview.html')
@@ -29,7 +29,8 @@ def save(request):
         vars=new(name=name,password=password,email=email,chemistry=chemistry,physics=physics,maths=maths,english=english)
         vars.save()
         vars=new.objects.all()
-        return render(request, 'adminpage.html',{'vars':vars})
+        var=new2.objects.all()
+        return render(request, 'adminpage.html',{'vars':vars,'var':var})
 
 def login(request):
     
@@ -49,8 +50,8 @@ def alog(request):
         password1=request.POST.get("password1")
         vars=new1(username=username,password1=password1)
         vars.save()
-        
-        return render(request, 'settings.html')
+        vars=new1.objects.all()
+        return render(request, 'addadmin.html',{'vars':vars})
 def loginadmin(request):
     if request.method=='POST':
         if new1.objects.filter(username=request.POST['uname'], password1=request.POST['psw']).exists():
@@ -79,7 +80,8 @@ def message(request):
 def delete(request,id):
     vars1=new.objects.get(id=id)
     vars1.delete()
-    return redirect('/adminpage')
+    var=new2.objects.all()
+    return redirect('/adminpage',)
 def edit(request,id):
     vars=new.objects.get(id=id)
     return render(request,'settings.html',{'var':vars})
@@ -101,4 +103,10 @@ def loginn(request,id):
     vars=new.objects.filter(id=id)
     return render(request, 'studentview.html',{'var':vars})
     
+def deletet(request,id):
+    vars1=new1.objects.get(id=id)
+    vars1.delete()
+    return redirect('/settings')
+def addadmin(request):
+    return render(request, 'addadmin.html')
     

@@ -1,0 +1,119 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+</head>
+<style>
+     #page{
+         margin-top: 1%;
+        
+         background-image:linear-gradient(gray,white);
+         padding-left: 10%;
+         padding-bottom: 5%;
+         height: 100%;
+         padding-top: 15%;
+       
+        }
+        .a{
+          color: rgb(0, 0, 0);
+        }
+        .b{
+          margin-left: 5px;
+        }
+        .c{
+          margin-left: 18px;
+        }
+        .d{
+         margin-left: 45px;
+        }
+
+
+</style>
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
+        <div class="container">
+            
+            <a href="#" class="navbar-brand" >
+                <h3 class="text-success" style="font-size: 30px;"><img src="{% static 'images/iptlogo.png'%}" alt="Los Angeles" width="100px" height="40px"> IPT &<span class="text-primary">GPTC</span></h3>
+            </a>
+         
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+
+
+          <div class="collapse navbar-collapse" id="menu">
+              <ul class="navbar-nav mx-auto" style="font-size: 15px;" >
+                 <!-- <li class="nav-item">
+                      <a href="/index/" class="nav-link">Home</a>
+                  </li>-->
+                 
+                  <li class="nav-item">
+                      <a href="/index/" class="nav-link " >Home</a>
+                  </li>
+                  
+                 <li class="nav-item ">
+                      <a href="/adminpage/" class="nav-link " >Admin page</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link active" >Settings</a>
+                </li>
+                  
+              </ul>
+              <!--<button class="btn btn-primary me-2">Sign up</button>
+              <button class="btn btn-outline-primary me-2" style="margin-left: 3px;">Login</button>-->
+              </div>
+        </div>
+    </nav>
+    <div class="container-fluid">
+  
+        <div id="page">
+         <h2 class="title" style="color: rgb(0, 0, 0); margin-bottom: 30px;"><center><u>Add new admin</u></center></h2> 
+      
+        <div class="total">
+        <form action="/alog/" name="form1" target="_self" autocomplete="on" method="post"> 
+            {% csrf_token %} 
+          <div class="row">
+            <labe class="a">User  Name :</labe>
+            <input class="b   col-md-8 col-sm-8  col-7" type="text" name="username" placeholder="User Name" > <br>
+          </div>
+         
+          <div class="row" style="margin-top: 12px;">
+            <labe class="a">Password :</labe>
+            <input class="c col-md-8 col-sm-8 col-7" type="password" name="password1" placeholder="Password"><br>
+            
+          </div>
+          
+          
+          <!--<div class="row" style="margin-top: 8px; ">
+            <input type="submit">
+          </div>-->
+          
+         
+          <input type="submit" style="margin-top: 20px; background-color: green;">
+        </form> 
+      </div>
+      </div>
+      </div>
+    
+</body>
+</html>
+
