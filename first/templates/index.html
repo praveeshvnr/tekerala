@@ -47,10 +47,10 @@
                       <a href="#" class="nav-link active" >Home</a>
                   </li>
                  <li class="nav-item ">
-                      <a href="/student/" class="nav-link " >Student login</a>
+                      <a href="/app/student" class="nav-link " >Student login</a>
                   </li>
                   <li class="nav-item">
-                    <a href="/admins/" class="nav-link">Admin</a>
+                    <a href="/app/admins" class="nav-link">Admin</a>
                 </li>
               </ul>
               <!--<button class="btn btn-primary me-2">Sign up</button>
@@ -270,7 +270,7 @@
             <img src="{% static '/images/122715793 network.jpg' %}" style="height: 40%; " alt="">
         </div>
 
-        <form action="/message/" method="post">
+        <form action="/app/message" method="post">
             {% csrf_token %} 
             <div class="inputBox">
                 <input type="text" placeholder="name" name="cname">

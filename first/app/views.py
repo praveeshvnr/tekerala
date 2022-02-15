@@ -1,3 +1,4 @@
+import email
 from django.shortcuts import render,redirect
 from app.models import new,new1,new2
 # Create your views here.
@@ -36,7 +37,7 @@ def login(request):
     
     if request.method=='POST':
         if new.objects.filter(email=request.POST['email1'], password=request.POST['password1']).exists():
-            members= new.objects.all()
+            members= new.objects.all().filter(email=request.POST['email1'])
             
             return render(request, 'studentview.html',{'member':members})
         else:
@@ -81,7 +82,7 @@ def delete(request,id):
     vars1=new.objects.get(id=id)
     vars1.delete()
     var=new2.objects.all()
-    return redirect('/adminpage',)
+    return redirect('/app/adminpage',)
 def edit(request,id):
     vars=new.objects.get(id=id)
     return render(request,'settings.html',{'var':vars})
@@ -97,7 +98,7 @@ def update(request,id):
     vars.email=request.POST.get('email')
     vars.save()
     
-    return redirect('/adminpage')
+    return redirect('/app/adminpage')
 
 def loginn(request,id):
     vars=new.objects.filter(id=id)
